@@ -2,9 +2,18 @@
 #Use this to add packages to your machine when running wu_setup_dev
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sh -c 'wget -qO- http://people.redhat.com/bkabrda/scl_python27.repo >> /etc/yum.repos.d/scl.repo'
 
 #need to install node... to get npm... to install react-tools... to run jsx... to precompile react code into plain js
 curl -sL https://rpm.nodesource.com/setup | bash -
 yum install -y nodejs
+yum install -y python27
 npm install -g react-tools
+#install C++11
+cd /etc/yum.repos.d
+wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo 
+yum --enablerepo=testing-1.1-devtools-6 --skip-broken install devtoolset-1.1-gcc devtoolset-1.1-gcc-c++
 
+wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+python2.7 ez_setup.py
+easy_install-2.7 pip

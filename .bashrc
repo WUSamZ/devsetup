@@ -21,7 +21,7 @@ alias cdbrands="cd /software/dist/newspaper/newspaper/brands"
 alias cdpapers="cd /software/dist/newspaper/newspaper/papers"
 alias cdscrapers="cd /prod/www/apache/htdocs/autoasp/scrapers"
 alias cdmachines="cd /software/dist/types"
-
+alias cdp="cd /code/UP_Sql2Mongo/"
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 		. /etc/bashrc
@@ -51,6 +51,6 @@ fi
 
 export PS1
 
-
+export PATH=/opt/centos/devtoolset-1.1/root/usr/bin/:$PATH
 #Make git log awesome
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
